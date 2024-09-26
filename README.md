@@ -36,16 +36,16 @@ Este projeto implementa um pipeline ETL (Extração, Transformação e Carga) pa
 
 Defina o diretório do Airflow em seu sistema. Certifique-se de configurar o caminho correto no ``docker-compose.yaml``, como no exemplo:
     
-      ```
-      volumes:
+```bash
+   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - C:/opt/data/bronze:/opt/data/bronze  # Mapeamento para a camada Bronze
-    - C:/opt/data/silver:/opt/data/silver  # Mapeamento para a camada Silver
-    - C:/opt/data/gold:/opt/data/gold  # Mapeamento para a camada Gold
-      ```
+    - C:/Users/emilly/airflow/data/bronze:/Users/emilly/airflow/data/bronze   # Mapeamento para a camada Bronze
+    - C:/Users/emilly/airflow/data/silver:/Users/emilly/airflow/data/silver   # Mapeamento para a camada Silver
+    - C:/Users/emilly/airflow/data/gold:/Users/emilly/airflow/data/gold       # Mapeamento para a camada Gold
+ ```
 
 ### _Como Executar o Pipeline_
 
@@ -53,7 +53,7 @@ Defina o diretório do Airflow em seu sistema. Certifique-se de configurar o cam
 2. Acesse a interface do Airflow através do navegador no endereço http://localhost:8080.
 3. O login e senha se encontra dentro do ``docker-compose.yaml``
    - Geralmente o login/senha é ``airflow``
-4. No Airflow, localize o DAG brewery_etl_pipeline e ative-o.
+4. No Airflow, localize a DAG ``brewery_etl_pipeline`` e ative.
 
 
 
