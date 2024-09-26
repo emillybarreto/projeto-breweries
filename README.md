@@ -2,7 +2,7 @@
 
 Este projeto implementa um pipeline ETL (Extração, Transformação e Carga) para coletar, transformar e agregar dados de cervejarias utilizando a Open Brewery DB API. O pipeline está dividido em três camadas (bronze, silver e gold).
 
-## Estrutura do Pipeline
+### _Estrutura do Pipeline_
 
 1. Camada Bronze: Armazena os dados brutos extraídos da API.
 2. Camada Silver: Realiza transformações nos dados e particiona por state e country.
@@ -10,11 +10,12 @@ Este projeto implementa um pipeline ETL (Extração, Transformação e Carga) pa
    - Agrupamento por ``brewery_type`` e ``state``.
    - Agrupamento por ``brewery_type`` e ``country``.
 
-## Requisitos
+### _Requisitos_
+
 - [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)
 - [Python 3.12.6](https://www.python.org/downloads/)
 
-## Instalação
+### _Instalação_
 
 1. Clone este repositório:
 
@@ -46,9 +47,22 @@ Defina o diretório do Airflow em seu sistema. Certifique-se de configurar o cam
     - C:/opt/data/gold:/opt/data/gold  # Mapeamento para a camada Gold
       ```
 
-## Como Executar o Pipeline
+### _Como Executar o Pipeline_
+
 1. Inicie o Airflow
 2. Acesse a interface do Airflow através do navegador no endereço http://localhost:8080.
 3. O login e senha se encontra dentro do ``docker-compose.yaml``
    - Geralmente o login/senha é ``airflow``
 4. No Airflow, localize o DAG brewery_etl_pipeline e ative-o.
+
+
+
+
+## Dashboard - Data Breweries
+
+O objetivo da criação do dashboard é visualizar os dados brutos da API e poder analisar por tipos de cervejaria, a quantidade alocada por estado e país, sendo possível acessar o website da companhia.
+
+Para interarir aos dados, basta acessar [Data Breweries](https://app.powerbi.com/view?r=eyJrIjoiMWI2ZDBiNjMtMmY2OS00ODg5LTk2ZmMtNGM3NjlmMTEzMDEzIiwidCI6ImNjOTNmYTIzLTEyMmYtNDZhYi04MjZiLTllZGIxZDJhMTVlZCJ9), a base de dados utilizada é a que consta como ``data.csv`` no diretório do git.
+
+![dashboard_data_breweries_view](https://github.com/user-attachments/assets/e21f7689-5ef0-4df6-bd80-01dac93efb94)
+
